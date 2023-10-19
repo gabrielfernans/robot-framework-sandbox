@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20231019 00:12:40.387" rpa="false" schemaversion="4">
+<suite id="s1" name="Syliustesting" source="c:\Users\falec\Documents\GC\repos\robot-framework-sandbox\sylius-testing\syliustesting.robot">
+<test id="s1-t1" name="Create a Unique Association Type" line="31">
+<kw name="Generate Random String" library="String">
+<var>${RANDOM_STRING}</var>
+<arg>8</arg>
+<arg>[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20231019 00:12:40.732" level="INFO">${RANDOM_STRING} = gxMNNaFX</msg>
+<status status="PASS" starttime="20231019 00:12:40.731" endtime="20231019 00:12:40.735"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:9990/admin</arg>
+<arg>Firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231019 00:12:40.737" level="INFO">Opening browser 'Firefox' to base url 'http://localhost:9990/admin'.</msg>
+<status status="PASS" starttime="20231019 00:12:40.736" endtime="20231019 00:12:49.064"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=_username</arg>
+<arg>sylius</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:12:49.066" level="INFO">Typing text 'sylius' into text field 'id=_username'.</msg>
+<status status="PASS" starttime="20231019 00:12:49.065" endtime="20231019 00:12:49.137"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=_password</arg>
+<arg>sylius</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:12:49.139" level="INFO">Typing text 'sylius' into text field 'id=_password'.</msg>
+<status status="PASS" starttime="20231019 00:12:49.138" endtime="20231019 00:12:49.160"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>css=.primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231019 00:12:49.162" level="INFO">Clicking button 'css=.primary'.</msg>
+<status status="PASS" starttime="20231019 00:12:49.161" endtime="20231019 00:12:50.238"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>css=.last</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231019 00:12:50.241" level="INFO">Clicking link 'css=.last'.</msg>
+<status status="PASS" starttime="20231019 00:12:50.239" endtime="20231019 00:12:51.685"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CREATION_SECTION_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231019 00:12:51.686" level="INFO">Clicking element '//a[contains(@class, 'ui labeled icon button ')]'.</msg>
+<status status="PASS" starttime="20231019 00:12:51.686" endtime="20231019 00:12:52.103"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CREATION_CODE_INPUT}</arg>
+<arg>${CREATION_CODE}_${RANDOM_STRING}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:12:52.104" level="INFO">Typing text 'association_type_henry_gxMNNaFX' into text field '//input[contains(@id, 'sylius_product_association_type_code')]'.</msg>
+<status status="PASS" starttime="20231019 00:12:52.103" endtime="20231019 00:12:52.203"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${UN_ES_ASSOCIATION}</arg>
+<arg>${CREATION_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:12:52.205" level="INFO">Typing text 'Henry the best' into text field '//input[contains(@id, 'sylius_product_association_type_translations_en_US_name')]'.</msg>
+<status status="PASS" starttime="20231019 00:12:52.204" endtime="20231019 00:12:52.236"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CREATION_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231019 00:12:52.238" level="INFO">Clicking element '//button[contains(@type, 'submit')]'.</msg>
+<status status="PASS" starttime="20231019 00:12:52.237" endtime="20231019 00:12:52.812"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${CREATION_SUCCESS_MESSAGE}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231019 00:12:52.813" endtime="20231019 00:12:52.825"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231019 00:12:52.826" endtime="20231019 00:12:57.603"/>
+</kw>
+<status status="PASS" starttime="20231019 00:12:40.730" endtime="20231019 00:12:57.604"/>
+</test>
+<test id="s1-t2" name="Delete All Association Types" line="45">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:9990/admin</arg>
+<arg>Firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231019 00:12:57.608" level="INFO">Opening browser 'Firefox' to base url 'http://localhost:9990/admin'.</msg>
+<status status="PASS" starttime="20231019 00:12:57.607" endtime="20231019 00:13:06.181"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=_username</arg>
+<arg>sylius</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:06.183" level="INFO">Typing text 'sylius' into text field 'id=_username'.</msg>
+<status status="PASS" starttime="20231019 00:13:06.182" endtime="20231019 00:13:06.231"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=_password</arg>
+<arg>sylius</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:06.234" level="INFO">Typing text 'sylius' into text field 'id=_password'.</msg>
+<status status="PASS" starttime="20231019 00:13:06.233" endtime="20231019 00:13:06.258"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>css=.primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:06.259" level="INFO">Clicking button 'css=.primary'.</msg>
+<status status="PASS" starttime="20231019 00:13:06.258" endtime="20231019 00:13:07.250"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>css=.last</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:07.252" level="INFO">Clicking link 'css=.last'.</msg>
+<status status="PASS" starttime="20231019 00:13:07.251" endtime="20231019 00:13:08.754"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ALL_ITEMS_CHECKBOX}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:08.756" level="INFO">Clicking element '//input[contains(@type, 'checkbox')]'.</msg>
+<status status="PASS" starttime="20231019 00:13:08.755" endtime="20231019 00:13:09.016"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${DELETE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:09.017" level="INFO">Clicking element '//button[contains(@class, 'ui red labeled icon button')]'.</msg>
+<status status="PASS" starttime="20231019 00:13:09.016" endtime="20231019 00:13:09.264"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${DELETE_CONFIRMATION_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:09.266" level="INFO">Clicking element '//div[contains(@id, 'confirmation-button')]'.</msg>
+<status status="PASS" starttime="20231019 00:13:09.265" endtime="20231019 00:13:09.890"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${DELETE_ALL_SUCCESS_MESSAGE}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231019 00:13:09.890" endtime="20231019 00:13:09.954"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231019 00:13:09.955" endtime="20231019 00:13:14.816"/>
+</kw>
+<status status="PASS" starttime="20231019 00:12:57.605" endtime="20231019 00:13:14.817"/>
+</test>
+<test id="s1-t3" name="Create an Association Type" line="57">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:9990/admin</arg>
+<arg>Firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231019 00:13:14.821" level="INFO">Opening browser 'Firefox' to base url 'http://localhost:9990/admin'.</msg>
+<status status="PASS" starttime="20231019 00:13:14.821" endtime="20231019 00:13:22.655"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=_username</arg>
+<arg>sylius</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:22.655" level="INFO">Typing text 'sylius' into text field 'id=_username'.</msg>
+<status status="PASS" starttime="20231019 00:13:22.655" endtime="20231019 00:13:22.709"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=_password</arg>
+<arg>sylius</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:22.710" level="INFO">Typing text 'sylius' into text field 'id=_password'.</msg>
+<status status="PASS" starttime="20231019 00:13:22.709" endtime="20231019 00:13:22.739"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>css=.primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:22.740" level="INFO">Clicking button 'css=.primary'.</msg>
+<status status="PASS" starttime="20231019 00:13:22.739" endtime="20231019 00:13:23.732"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>css=.last</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:23.733" level="INFO">Clicking link 'css=.last'.</msg>
+<status status="PASS" starttime="20231019 00:13:23.733" endtime="20231019 00:13:25.139"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CREATION_SECTION_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:25.142" level="INFO">Clicking element '//a[contains(@class, 'ui labeled icon button ')]'.</msg>
+<status status="PASS" starttime="20231019 00:13:25.141" endtime="20231019 00:13:25.545"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CREATION_CODE_INPUT}</arg>
+<arg>${CREATION_CODE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:25.549" level="INFO">Typing text 'association_type_henry' into text field '//input[contains(@id, 'sylius_product_association_type_code')]'.</msg>
+<status status="PASS" starttime="20231019 00:13:25.547" endtime="20231019 00:13:25.659"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${UN_ES_ASSOCIATION}</arg>
+<arg>${CREATION_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:25.660" level="INFO">Typing text 'Henry the best' into text field '//input[contains(@id, 'sylius_product_association_type_translations_en_US_name')]'.</msg>
+<status status="PASS" starttime="20231019 00:13:25.659" endtime="20231019 00:13:25.697"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CREATION_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:25.700" level="INFO">Clicking element '//button[contains(@type, 'submit')]'.</msg>
+<status status="PASS" starttime="20231019 00:13:25.699" endtime="20231019 00:13:26.217"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${CREATION_SUCCESS_MESSAGE}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231019 00:13:26.218" endtime="20231019 00:13:26.237"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231019 00:13:26.238" endtime="20231019 00:13:31.271"/>
+</kw>
+<status status="PASS" starttime="20231019 00:13:14.819" endtime="20231019 00:13:31.271"/>
+</test>
+<test id="s1-t4" name="Should Not Create with a Similar Name" line="70">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:9990/admin</arg>
+<arg>Firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231019 00:13:31.274" level="INFO">Opening browser 'Firefox' to base url 'http://localhost:9990/admin'.</msg>
+<status status="PASS" starttime="20231019 00:13:31.273" endtime="20231019 00:13:38.266"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=_username</arg>
+<arg>sylius</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:38.267" level="INFO">Typing text 'sylius' into text field 'id=_username'.</msg>
+<status status="PASS" starttime="20231019 00:13:38.266" endtime="20231019 00:13:38.320"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=_password</arg>
+<arg>sylius</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:38.322" level="INFO">Typing text 'sylius' into text field 'id=_password'.</msg>
+<status status="PASS" starttime="20231019 00:13:38.321" endtime="20231019 00:13:38.345"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>css=.primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:38.348" level="INFO">Clicking button 'css=.primary'.</msg>
+<status status="PASS" starttime="20231019 00:13:38.347" endtime="20231019 00:13:39.319"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>css=.last</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:39.320" level="INFO">Clicking link 'css=.last'.</msg>
+<status status="PASS" starttime="20231019 00:13:39.319" endtime="20231019 00:13:40.730"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CREATION_SECTION_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:40.733" level="INFO">Clicking element '//a[contains(@class, 'ui labeled icon button ')]'.</msg>
+<status status="PASS" starttime="20231019 00:13:40.731" endtime="20231019 00:13:41.142"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CREATION_CODE_INPUT}</arg>
+<arg>${CREATION_CODE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:41.143" level="INFO">Typing text 'association_type_henry' into text field '//input[contains(@id, 'sylius_product_association_type_code')]'.</msg>
+<status status="PASS" starttime="20231019 00:13:41.142" endtime="20231019 00:13:41.237"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${UN_ES_ASSOCIATION}</arg>
+<arg>${CREATION_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:41.238" level="INFO">Typing text 'Henry the best' into text field '//input[contains(@id, 'sylius_product_association_type_translations_en_US_name')]'.</msg>
+<status status="PASS" starttime="20231019 00:13:41.238" endtime="20231019 00:13:41.273"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CREATION_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:41.274" level="INFO">Clicking element '//button[contains(@type, 'submit')]'.</msg>
+<status status="PASS" starttime="20231019 00:13:41.274" endtime="20231019 00:13:41.614"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${ERROR_MESSAGE}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231019 00:13:41.614" endtime="20231019 00:13:41.626"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231019 00:13:41.627" endtime="20231019 00:13:46.417"/>
+</kw>
+<status status="PASS" starttime="20231019 00:13:31.273" endtime="20231019 00:13:46.417"/>
+</test>
+<test id="s1-t5" name="Should Not Create Without a Name" line="83">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:9990/admin</arg>
+<arg>Firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231019 00:13:46.422" level="INFO">Opening browser 'Firefox' to base url 'http://localhost:9990/admin'.</msg>
+<status status="PASS" starttime="20231019 00:13:46.422" endtime="20231019 00:13:53.941"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=_username</arg>
+<arg>sylius</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:53.942" level="INFO">Typing text 'sylius' into text field 'id=_username'.</msg>
+<status status="PASS" starttime="20231019 00:13:53.942" endtime="20231019 00:13:53.998"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=_password</arg>
+<arg>sylius</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:54.001" level="INFO">Typing text 'sylius' into text field 'id=_password'.</msg>
+<status status="PASS" starttime="20231019 00:13:54.000" endtime="20231019 00:13:54.023"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>css=.primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:54.025" level="INFO">Clicking button 'css=.primary'.</msg>
+<status status="PASS" starttime="20231019 00:13:54.024" endtime="20231019 00:13:55.018"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>css=.last</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:55.020" level="INFO">Clicking link 'css=.last'.</msg>
+<status status="PASS" starttime="20231019 00:13:55.019" endtime="20231019 00:13:56.428"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CREATION_SECTION_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:56.430" level="INFO">Clicking element '//a[contains(@class, 'ui labeled icon button ')]'.</msg>
+<status status="PASS" starttime="20231019 00:13:56.429" endtime="20231019 00:13:56.789"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CREATION_CODE_INPUT}</arg>
+<arg>${CREATION_CODE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:56.791" level="INFO">Typing text 'association_type_henry' into text field '//input[contains(@id, 'sylius_product_association_type_code')]'.</msg>
+<status status="PASS" starttime="20231019 00:13:56.790" endtime="20231019 00:13:56.891"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CREATION_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231019 00:13:56.892" level="INFO">Clicking element '//button[contains(@type, 'submit')]'.</msg>
+<status status="PASS" starttime="20231019 00:13:56.891" endtime="20231019 00:13:57.220"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${ERROR_MESSAGE}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231019 00:13:57.221" endtime="20231019 00:13:57.235"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231019 00:13:57.236" endtime="20231019 00:14:02.145"/>
+</kw>
+<status status="PASS" starttime="20231019 00:13:46.420" endtime="20231019 00:14:02.145"/>
+</test>
+<test id="s1-t6" name="Filter by Code" line="95">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:9990/admin</arg>
+<arg>Firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231019 00:14:02.149" level="INFO">Opening browser 'Firefox' to base url 'http://localhost:9990/admin'.</msg>
+<status status="PASS" starttime="20231019 00:14:02.148" endtime="20231019 00:14:10.481"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=_username</arg>
+<arg>sylius</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:10.482" level="INFO">Typing text 'sylius' into text field 'id=_username'.</msg>
+<status status="PASS" starttime="20231019 00:14:10.481" endtime="20231019 00:14:10.540"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=_password</arg>
+<arg>sylius</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:10.541" level="INFO">Typing text 'sylius' into text field 'id=_password'.</msg>
+<status status="PASS" starttime="20231019 00:14:10.540" endtime="20231019 00:14:10.573"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>css=.primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:10.576" level="INFO">Clicking button 'css=.primary'.</msg>
+<status status="PASS" starttime="20231019 00:14:10.575" endtime="20231019 00:14:11.592"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>css=.last</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:11.593" level="INFO">Clicking link 'css=.last'.</msg>
+<status status="PASS" starttime="20231019 00:14:11.592" endtime="20231019 00:14:13.083"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FILTER_CODE_INPUT}</arg>
+<arg>${CREATION_CODE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:13.085" level="INFO">Typing text 'association_type_henry' into text field '//input[contains(@id, 'criteria_code_value')]'.</msg>
+<status status="PASS" starttime="20231019 00:14:13.084" endtime="20231019 00:14:13.156"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${FILTER_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:13.156" level="INFO">Clicking element '//button[contains(@class, 'ui blue labeled icon button')]'.</msg>
+<status status="PASS" starttime="20231019 00:14:13.156" endtime="20231019 00:14:13.544"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${CREATION_CODE}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231019 00:14:13.544" endtime="20231019 00:14:13.583"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231019 00:14:13.584" endtime="20231019 00:14:18.822"/>
+</kw>
+<status status="PASS" starttime="20231019 00:14:02.148" endtime="20231019 00:14:18.823"/>
+</test>
+<test id="s1-t7" name="Filter by Name" line="106">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:9990/admin</arg>
+<arg>Firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231019 00:14:18.828" level="INFO">Opening browser 'Firefox' to base url 'http://localhost:9990/admin'.</msg>
+<status status="PASS" starttime="20231019 00:14:18.827" endtime="20231019 00:14:26.300"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=_username</arg>
+<arg>sylius</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:26.301" level="INFO">Typing text 'sylius' into text field 'id=_username'.</msg>
+<status status="PASS" starttime="20231019 00:14:26.300" endtime="20231019 00:14:26.364"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=_password</arg>
+<arg>sylius</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:26.366" level="INFO">Typing text 'sylius' into text field 'id=_password'.</msg>
+<status status="PASS" starttime="20231019 00:14:26.366" endtime="20231019 00:14:26.393"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>css=.primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:26.394" level="INFO">Clicking button 'css=.primary'.</msg>
+<status status="PASS" starttime="20231019 00:14:26.393" endtime="20231019 00:14:27.430"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>css=.last</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:27.433" level="INFO">Clicking link 'css=.last'.</msg>
+<status status="PASS" starttime="20231019 00:14:27.431" endtime="20231019 00:14:28.780"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FILTER_NAME_INPUT}</arg>
+<arg>${CREATION_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:28.783" level="INFO">Typing text 'Henry the best' into text field '//input[contains(@id, 'criteria_name_value')]'.</msg>
+<status status="PASS" starttime="20231019 00:14:28.781" endtime="20231019 00:14:28.833"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${FILTER_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:28.836" level="INFO">Clicking element '//button[contains(@class, 'ui blue labeled icon button')]'.</msg>
+<status status="PASS" starttime="20231019 00:14:28.835" endtime="20231019 00:14:29.233"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${CREATION_NAME}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231019 00:14:29.234" endtime="20231019 00:14:29.245"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231019 00:14:29.246" endtime="20231019 00:14:34.109"/>
+</kw>
+<status status="PASS" starttime="20231019 00:14:18.826" endtime="20231019 00:14:34.110"/>
+</test>
+<test id="s1-t8" name="Filter by Both Code and Name" line="117">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:9990/admin</arg>
+<arg>Firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231019 00:14:34.114" level="INFO">Opening browser 'Firefox' to base url 'http://localhost:9990/admin'.</msg>
+<status status="PASS" starttime="20231019 00:14:34.113" endtime="20231019 00:14:42.080"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=_username</arg>
+<arg>sylius</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:42.081" level="INFO">Typing text 'sylius' into text field 'id=_username'.</msg>
+<status status="PASS" starttime="20231019 00:14:42.080" endtime="20231019 00:14:42.131"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=_password</arg>
+<arg>sylius</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:42.133" level="INFO">Typing text 'sylius' into text field 'id=_password'.</msg>
+<status status="PASS" starttime="20231019 00:14:42.132" endtime="20231019 00:14:42.156"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>css=.primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:42.157" level="INFO">Clicking button 'css=.primary'.</msg>
+<status status="PASS" starttime="20231019 00:14:42.157" endtime="20231019 00:14:43.234"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>css=.last</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:43.236" level="INFO">Clicking link 'css=.last'.</msg>
+<status status="PASS" starttime="20231019 00:14:43.235" endtime="20231019 00:14:44.724"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FILTER_CODE_INPUT}</arg>
+<arg>${CREATION_CODE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:44.726" level="INFO">Typing text 'association_type_henry' into text field '//input[contains(@id, 'criteria_code_value')]'.</msg>
+<status status="PASS" starttime="20231019 00:14:44.725" endtime="20231019 00:14:44.771"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FILTER_NAME_INPUT}</arg>
+<arg>${CREATION_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:44.773" level="INFO">Typing text 'Henry the best' into text field '//input[contains(@id, 'criteria_name_value')]'.</msg>
+<status status="PASS" starttime="20231019 00:14:44.772" endtime="20231019 00:14:44.802"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${FILTER_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:44.804" level="INFO">Clicking element '//button[contains(@class, 'ui blue labeled icon button')]'.</msg>
+<status status="PASS" starttime="20231019 00:14:44.803" endtime="20231019 00:14:45.188"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${CREATION_NAME}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231019 00:14:45.190" endtime="20231019 00:14:45.205"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231019 00:14:45.206" endtime="20231019 00:14:50.089"/>
+</kw>
+<status status="PASS" starttime="20231019 00:14:34.112" endtime="20231019 00:14:50.090"/>
+</test>
+<test id="s1-t9" name="Delete an Association Type" line="129">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:9990/admin</arg>
+<arg>Firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231019 00:14:50.093" level="INFO">Opening browser 'Firefox' to base url 'http://localhost:9990/admin'.</msg>
+<status status="PASS" starttime="20231019 00:14:50.092" endtime="20231019 00:14:57.806"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=_username</arg>
+<arg>sylius</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:57.807" level="INFO">Typing text 'sylius' into text field 'id=_username'.</msg>
+<status status="PASS" starttime="20231019 00:14:57.807" endtime="20231019 00:14:57.860"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=_password</arg>
+<arg>sylius</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:57.862" level="INFO">Typing text 'sylius' into text field 'id=_password'.</msg>
+<status status="PASS" starttime="20231019 00:14:57.861" endtime="20231019 00:14:57.889"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>css=.primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:57.891" level="INFO">Clicking button 'css=.primary'.</msg>
+<status status="PASS" starttime="20231019 00:14:57.891" endtime="20231019 00:14:58.828"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>css=.last</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231019 00:14:58.830" level="INFO">Clicking link 'css=.last'.</msg>
+<status status="PASS" starttime="20231019 00:14:58.830" endtime="20231019 00:15:00.253"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FILTER_NAME_INPUT}</arg>
+<arg>${CREATION_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231019 00:15:00.255" level="INFO">Typing text 'Henry the best' into text field '//input[contains(@id, 'criteria_name_value')]'.</msg>
+<status status="PASS" starttime="20231019 00:15:00.254" endtime="20231019 00:15:00.295"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${FILTER_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231019 00:15:00.299" level="INFO">Clicking element '//button[contains(@class, 'ui blue labeled icon button')]'.</msg>
+<status status="PASS" starttime="20231019 00:15:00.297" endtime="20231019 00:15:00.678"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${DELETE_BUTTON_SINGLE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231019 00:15:00.680" level="INFO">Clicking element '//button[contains(@class, 'ui red labeled icon button') and not(@disabled)]'.</msg>
+<status status="PASS" starttime="20231019 00:15:00.679" endtime="20231019 00:15:00.962"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${DELETE_CONFIRMATION_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231019 00:15:00.964" level="INFO">Clicking element '//div[contains(@id, 'confirmation-button')]'.</msg>
+<status status="PASS" starttime="20231019 00:15:00.963" endtime="20231019 00:15:01.476"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${DELETE_SUCCESS_MESSAGE}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231019 00:15:01.477" endtime="20231019 00:15:01.492"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231019 00:15:01.494" endtime="20231019 00:15:06.596"/>
+</kw>
+<status status="PASS" starttime="20231019 00:14:50.091" endtime="20231019 00:15:06.597"/>
+</test>
+<status status="PASS" starttime="20231019 00:12:40.394" endtime="20231019 00:15:06.599"/>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="9" fail="0" skip="0" id="s1" name="Syliustesting">Syliustesting</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
